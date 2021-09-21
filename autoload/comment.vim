@@ -14,7 +14,7 @@ endfunc
 
 func! comment#get_ft_comment_str()
   let l:str   = ['c', 'cpp', 'java', 'javascript']
-  let l:hash  = ['make', 'python', 'sh', 'tmux']
+  let l:hash  = ['conf', 'make', 'python', 'sh', 'tmux']
   let l:star  = ['markdown']
   let l:dash  = ['text']
   let l:quote = ['vim']
@@ -26,10 +26,12 @@ func! comment#get_ft_comment_str()
   endif
 endfunc
 
+
 func! comment#comment()
   let l:beg = comment#get_ft_comment_str()
   exec 'norm! ^i' . beg . ' '
 endfunc
+
 
 func! comment#uncomment()
   let l:beg = comment#get_ft_comment_str()
